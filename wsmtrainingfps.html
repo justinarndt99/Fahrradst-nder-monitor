@@ -488,8 +488,8 @@
         <button class="tab" onclick="showPanel('quiz', event)">
             <span class="tab-icon">🧠</span> Quiz
         </button>
-        <button class="tab" onclick="showPanel('zuordnung', event)">
-            <span class="tab-icon">🔗</span> Zuordnung
+        <button class="tab" onclick="showPanel('kategorien', event)">
+            <span class="tab-icon">📊</span> Kategorien
         </button>
         <button class="tab" onclick="showPanel('szenarien', event)">
             <span class="tab-icon">💼</span> Beratung
@@ -544,17 +544,144 @@
         </div>
     </div>
 
-    <!-- ═══════════ PANEL 4: ZUORDNUNG ═══════════ -->
-    <div class="panel" id="panel-zuordnung">
-        <div class="card" style="border-left: 5px solid var(--accent); margin-bottom: 28px;">
-            <h3>🔗 Zuordnungsspiel</h3>
-            <p>Ordnen Sie die Produkteigenschaften dem richtigen Modell zu. +8 Punkte pro richtige Zuordnung.</p>
+    <!-- ═══════════ PANEL 4: KATEGORIEN ═══════════ -->
+    <div class="panel" id="panel-kategorien">
+        <div class="card" style="border-left: 5px solid var(--g); margin-bottom: 28px;">
+            <h3>📊 Die 3 WSM-Produktkategorien</h3>
+            <p>WSM klassifiziert alle Fahrradparksysteme in drei Kategorien – <strong>Basic, Economy und Professional</strong>. Die Einteilung gilt sowohl für <em>Fahrradparksysteme (FPS)</em> als auch für <em>BikeBoxen</em>. So finden Sie schnell das richtige Produkt für jedes Budget und jeden Anforderungsbereich.</p>
         </div>
-        <div class="match-game" id="matchGame">
-            <!-- filled by JS -->
+
+        <!-- BASIC -->
+        <div class="card" style="border-left: 5px solid #6b7a8a; margin-bottom: 20px;">
+            <h3 style="color:#6b7a8a;">🥉 1 | Basic</h3>
+            <p style="font-style:italic; margin-bottom:16px; color:var(--mid);">„Low-Budget" – schnell verfügbar, solide Grundausstattung</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:#6b7a8a;">Merkmale</div>
+                    <ul class="feature-list">
+                        <li>Lieferzeit: <strong>24 Stunden</strong></li>
+                        <li>Günstige Preis-Leistung, kein Aufpreis</li>
+                        <li>Feuerverzinkt – <strong>keine RAL-Farbauswahl</strong></li>
+                        <li>Keine Produktanpassungen möglich</li>
+                        <li>Keine Diebstahlsicherung integriert</li>
+                        <li>Keine Zertifizierungen (DIN, ADFC, TÜV)</li>
+                        <li>Keine statischen Berechnungen</li>
+                        <li>Keine E-Mobilitäts-Komponenten</li>
+                    </ul>
+                </div>
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:#6b7a8a;">Typische Anwendungsfälle</div>
+                    <ul class="feature-list">
+                        <li>Schulen & Kitas mit kleinem Budget</li>
+                        <li>Temporäre oder provisorische Anlagen</li>
+                        <li>Große Stückzahlen ohne Sonderanforderungen</li>
+                        <li>Projekte mit sehr kurzen Lieferfristen</li>
+                    </ul>
+                    <div style="margin-top:16px; padding:12px 14px; background:#f0f2f4; border-radius:10px; font-size:.85rem;">
+                        <strong>FPS-Produkte:</strong> Anlehnbügel 9100, Bügelparker 1000/2000, Bogenparker 5000, Hängeparker 3900, Standparker 4000, Schräghochparker SW/SF, Anlehnparker 2300<br>
+                        <strong style="margin-top:6px; display:block;">BikeBoxen:</strong> BikeBox 1 Basic
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ECONOMY -->
+        <div class="card" style="border-left: 5px solid var(--g); margin-bottom: 20px;">
+            <h3 style="color:var(--gd);">🥈 2 | Economy</h3>
+            <p style="font-style:italic; margin-bottom:16px; color:var(--mid);">Mehr Optionen bei weiterhin attraktivem Preis</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:var(--gd);">Merkmale</div>
+                    <ul class="feature-list">
+                        <li>Lieferzeit: <strong>24 h bis max. 4 Wochen</strong></li>
+                        <li>Gute Preis-Leistung, moderate Aufpreise</li>
+                        <li>Verzinkt + <strong>eingeschränkte RAL-Farbauswahl</strong></li>
+                        <li>Keine Produktanpassungen möglich</li>
+                        <li>Schutzfolien / Schrumpfschläuche (Modellabhängig)</li>
+                        <li>Integrierte Ösen für Diebstahlschutz (ausgewählt)</li>
+                        <li>Teils normgerecht: <strong>DIN 79008, ADFC</strong></li>
+                        <li>E-Mobilitäts-Komponenten nachrüstbar (XBF-Module)</li>
+                        <li>Keine statischen Berechnungen</li>
+                    </ul>
+                </div>
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:var(--gd);">Typische Anwendungsfälle</div>
+                    <ul class="feature-list">
+                        <li>Öffentliche Einrichtungen & Gemeinden</li>
+                        <li>Wohnanlagen & Mehrfamilienhäuser</li>
+                        <li>Betriebe mit wachsenden E-Bike-Anteilen</li>
+                        <li>Projekte mit Farbwunsch ohne hohe Normvorgaben</li>
+                    </ul>
+                    <div style="margin-top:16px; padding:12px 14px; background:#e8f5ee; border-radius:10px; font-size:.85rem;">
+                        <strong>FPS-Produkte:</strong> TRUST, TRACK, GALAXY/XL, 0500 XBF, 2500–4800 XBF, 3800, 9200, 9500, 9600, VeloPort, VeloGrid<br>
+                        <strong style="margin-top:6px; display:block;">BikeBoxen:</strong> BikeBox 1/ID/XL, BikeBox 3, Kinderwagenbox
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFESSIONAL -->
+        <div class="card" style="border-left: 5px solid #ff6b35; margin-bottom: 20px;">
+            <h3 style="color:#ff6b35;">🥇 3 | Professional</h3>
+            <p style="font-style:italic; margin-bottom:16px; color:var(--mid);">Produktmerkmale im Vordergrund – maximale Ausstattung</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:#ff6b35;">Merkmale</div>
+                    <ul class="feature-list">
+                        <li>Lieferzeit: <strong>ab 1 Woche</strong> (Planung einkalkulieren)</li>
+                        <li>Produktqualität steht vor dem Preis</li>
+                        <li>Verzinkt + <strong>RAL-Farben, Edelstahl, Aluminium</strong></li>
+                        <li>Individuelle Anpassungen <strong>meistens möglich</strong></li>
+                        <li>Zertifizierungen: <strong>DIN 79008, ADFC, TÜV</strong></li>
+                        <li>Vollintegrierter Diebstahlschutz</li>
+                        <li>E-Mobilitäts-Komponenten integrierbar</li>
+                        <li>Statische Berechnungen auf Anfrage möglich</li>
+                    </ul>
+                </div>
+                <div>
+                    <div style="font-weight:700; margin-bottom:8px; color:#ff6b35;">Typische Anwendungsfälle</div>
+                    <ul class="feature-list">
+                        <li>Repräsentative Standorte (Bahnhöfe, City)</li>
+                        <li>Arbeitgeber mit Nachhaltigkeitsstrategie</li>
+                        <li>Projekte mit ADFC- oder TÜV-Anforderung</li>
+                        <li>Hochfrequentierte E-Bike-Ladestationen</li>
+                        <li>Planungsaufwand: Statik, Normen, Sondermaße</li>
+                    </ul>
+                    <div style="margin-top:16px; padding:12px 14px; background:#fff3ee; border-radius:10px; font-size:.85rem;">
+                        <strong>FPS-Produkte:</strong> Anlehnsystem 6000, 9331 E, BikeHub Premium/Economy, VeloDock, VeloDock e-BIKE, Autarke Ladestation, SECURITY STATION, EW 7004<br>
+                        <strong style="margin-top:6px; display:block;">BikeBoxen:</strong> BikeBox 4
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vergleichstabelle -->
+        <div class="card" style="margin-bottom:20px;">
+            <h3>⚖️ Schnellvergleich</h3>
+            <div style="overflow-x:auto; margin-top:14px;">
+                <table style="width:100%;border-collapse:collapse;font-size:.88rem;">
+                    <thead>
+                        <tr style="background:var(--light);">
+                            <th style="padding:10px 14px;text-align:left;border-bottom:2px solid var(--border);">Merkmal</th>
+                            <th style="padding:10px 14px;text-align:center;border-bottom:2px solid var(--border);color:#6b7a8a;">🥉 Basic</th>
+                            <th style="padding:10px 14px;text-align:center;border-bottom:2px solid var(--border);color:var(--gd);">🥈 Economy</th>
+                            <th style="padding:10px 14px;text-align:center;border-bottom:2px solid var(--border);color:#ff6b35;">🥇 Professional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Lieferzeit</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">24 h</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">24 h – 4 Wochen</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">&gt; 1 Woche</td></tr>
+                        <tr style="background:var(--light);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);">RAL-Farben</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">eingeschränkt</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✓ breit</td></tr>
+                        <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Anpassungen</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✓ meistens</td></tr>
+                        <tr style="background:var(--light);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Diebstahlschutz</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">teilweise</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✓</td></tr>
+                        <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">DIN / ADFC / TÜV</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">teilweise</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✓</td></tr>
+                        <tr style="background:var(--light);"><td style="padding:9px 14px;border-bottom:1px solid var(--border);">E-Mobilität</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">nachrüstbar</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✓ integriert</td></tr>
+                        <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border);">Statik</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">✗</td><td style="padding:9px 14px;text-align:center;border-bottom:1px solid var(--border);">auf Anfrage</td></tr>
+                        <tr style="background:var(--light);"><td style="padding:9px 14px;">Edelstahl / Alu</td><td style="padding:9px 14px;text-align:center;">✗</td><td style="padding:9px 14px;text-align:center;">✗</td><td style="padding:9px 14px;text-align:center;">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
     <!-- ═══════════ PANEL 5: BERATUNGSSZENARIEN ═══════════ -->
     <div class="panel" id="panel-szenarien">
         <div class="card" style="border-left: 5px solid var(--accent); margin-bottom: 28px;">
@@ -758,21 +885,6 @@ shuffleQuiz();
 function renderQuiz(){var c=document.getElementById("quizContainer");if(quizI>=quizQ.length){var p=Math.round(quizS/quizQ.length*100),cl=p>=80?"score-great":p>=50?"score-ok":"score-bad",m=p>=80?"Hervorragend! WSM-Experte!":p>=50?"Gut! Lernkarten wiederholen.":"Noch Luft nach oben!";c.innerHTML='<div class="quiz-result"><div class="score-circle '+cl+'">'+p+'%</div><h3>'+quizS+" von "+quizQ.length+' richtig</h3><p>'+m+'</p><button class="quiz-next-btn" onclick="quizI=0;quizS=0;shuffleQuiz();renderQuiz()">Neues Quiz</button></div>';return}var q=quizQ[quizI];quizA=false;var oh="";for(var i=0;i<q.o.length;i++)oh+='<button class="quiz-option" onclick="answerQuiz('+i+')">'+q.o[i]+"</button>";c.innerHTML='<div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:'+(quizI/quizQ.length*100)+'%"></div></div><div class="quiz-counter">Frage '+(quizI+1)+" von "+quizQ.length+'</div><div class="quiz-question">'+q.q+'</div><div id="quizOpts">'+oh+'</div><div id="quizExplain"></div>'}
 function answerQuiz(idx){if(quizA)return;quizA=true;var q=quizQ[quizI],b=document.querySelectorAll("#quizOpts .quiz-option");for(var i=0;i<b.length;i++){b[i].classList.add("disabled");if(i===q.c){b[i].classList.add("correct");b[i].classList.add("highlight")}if(i===idx&&i!==q.c)b[i].classList.add("wrong")}var ok=idx===q.c;if(ok){quizS++;addScore(10)}document.getElementById("quizExplain").innerHTML='<div class="quiz-explain '+(ok?"correct-bg":"wrong-bg")+'">'+(ok?"Richtig! ":"Falsch. ")+q.e+'</div><button class="quiz-next-btn" onclick="quizI++;renderQuiz()">'+(quizI<quizQ.length-1?"Nächste Frage":"Ergebnis")+"</button>"}
 
-var matchPairs=[
-{left:"Signalroter Anschlagschutz",answer:"0500 XBF"},
-{left:"Flachstahl 60x10 mm",answer:"9600"},
-{left:"4 Kontaktpunkte",answer:"Anlehnsystem 6000"},
-{left:"48 mm Rohrdurchmesser",answer:"TRUST"},
-{left:"Montageschiene unter Pflaster",answer:"STRAP"},
-{left:"Selbststehend, 2-12 Plätze",answer:"TRACK"},
-{left:"IP44, 2x250V/16A",answer:"SVK 250/16"},
-{left:"Knierohr",answer:"9200"},
-{left:"Hüfthohe Anlehnbügel",answer:"2600 XBF"},
-{left:"ADFC empfohlen, 500 mm",answer:"2500 XBF"}
-];
-function renderMatch(){var aa=matchPairs.map(function(p){return p.answer}),sh=matchPairs.slice();for(var i=aa.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=aa[i];aa[i]=aa[j];aa[j]=t}for(var i=sh.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=sh[i];sh[i]=sh[j];sh[j]=t}var g=document.getElementById("matchGame"),h="";for(var i=0;i<sh.length;i++){var p=sh[i],opts='<option value="">- Zuordnen -</option>';for(var a=0;a<aa.length;a++)opts+='<option value="'+aa[a]+'">'+aa[a]+"</option>";h+='<div class="match-row"><div class="match-left">'+p.left+'</div><div class="match-arrow">&rarr;</div><select class="match-select" data-answer="'+p.answer+'">'+opts+"</select></div>"}h+='<button class="match-check-btn" onclick="checkMatch()">Auswerten</button><div class="match-result" id="matchResult"></div>';g.innerHTML=h}
-function checkMatch(){var c=0,s=document.querySelectorAll(".match-select");for(var i=0;i<s.length;i++){s[i].classList.remove("correct","wrong");if(s[i].value===s[i].dataset.answer){s[i].classList.add("correct");c++}else s[i].classList.add("wrong")}addScore(c*8);var col=c===matchPairs.length?"var(--g)":"var(--accent)";document.getElementById("matchResult").innerHTML='<span style="color:'+col+'">'+c+" von "+matchPairs.length+' richtig!</span><br><button class="match-check-btn" style="margin-top:12px;background:var(--mid)" onclick="renderMatch()">Neue Runde</button>'}
-
 var scenarios=[
 {label:"Kundenanfrage",title:"Schule: 200 Plätze, kein Budget für Erdarbeiten",desc:"Frisch gepflasterter Schulhof, Budget begrenzt, schnell benötigt.",opts:[{text:"TRUST einbetonieren",correct:false},{text:"TRACK selbststehend, preiswert",correct:true},{text:"9600 Design",correct:false},{text:"0500 XBF Bodenmontage",correct:false}],feedback:"TRACK: Selbststehend, preiswert, per Paketdienst, Reihenverbindung."},
 {label:"Beratung",title:"Hotel sucht repräsentative Lösung",desc:"4-Sterne-Hotel, modernes Design, Einbetonieren möglich.",opts:[{text:"Bügelparker 1000",correct:false},{text:"TRACK",correct:false},{text:"9600 Design-Flachstahl",correct:true},{text:"Standparker 4000",correct:false}],feedback:"9600: Technischer Look, gebogener Flachstahl."},
@@ -785,7 +897,7 @@ function renderScenarios(){var c=document.getElementById("scenarioContainer"),h=
 var scAnswered={};
 function answerScenario(si,oi){if(scAnswered[si])return;scAnswered[si]=true;var b=document.getElementById("scenario-"+si).querySelectorAll(".scenario-opt"),s=scenarios[si];for(var i=0;i<b.length;i++){b[i].classList.add("disabled");if(s.opts[i].correct)b[i].classList.add("correct");if(i===oi&&!s.opts[i].correct)b[i].classList.add("wrong")}if(s.opts[oi].correct)addScore(15);document.getElementById("scenarioFb-"+si).innerHTML='<div class="scenario-feedback '+(s.opts[oi].correct?"good":"bad")+'">'+(s.opts[oi].correct?"Perfekt! ":"Nicht optimal. ")+s.feedback+"</div>"}
 
-renderProducts();renderFlashcard();renderQuiz();renderMatch();renderScenarios();
+renderProducts();renderFlashcard();renderQuiz();renderScenarios();
 </script>
 </body>
 </html>
